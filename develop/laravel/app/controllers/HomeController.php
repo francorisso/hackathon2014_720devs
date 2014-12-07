@@ -14,16 +14,7 @@ class HomeController extends \BaseController {
 	*/
 	public function getIndex()
 	{
-		$step = Input::get("step");
-		if( empty($step) ){
-			$step = 1;
-		}
-		if(method_exists($this, "step" . $step)){
-			$this->{ "step" . $step }();
-			return;
-		}
-
-		trigger_error("Wrong page. Please go back.");
+		$this->layout = View::make("home");
 	}
 
 

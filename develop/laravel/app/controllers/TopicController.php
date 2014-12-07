@@ -10,27 +10,17 @@ class TopicController extends \BaseController {
 	private $view_params = array();
 	
 	/**
-	Basic controller for creating topics
+	* First step is asking the user what he wants to learn
 	*/
 	public function getIndex()
 	{
-		$step = Input::get("step");
-		if( empty($step) ){
-			$step = 1;
-		}
-		if(method_exists($this, "step" . $step)){
-			$this->{ "step" . $step }();
-			return;
-		}
-
-		trigger_error("Wrong page. Please go back.");
+		$this->layout = View::make( "topic.step1", $this->view_params );
 	}
 
-	private function step1(){
-		$this->layout = View::make( "newtopic.step1", $this->view_params );
-	}
-
-	private function step2(){
+	/***
+	* In this step we refine the search with some help from the user
+	*/
+	public function postStep2(){
 		/**
 		TODO: securing form: http://laravel.com/docs/4.2/html
 		*/
@@ -51,7 +41,7 @@ class TopicController extends \BaseController {
 		///First, I get all the topics in education and interests related to the search.
 		$params["query"] 	= $subject;
 		$params["filter"] 	= "(any type:/education/field_of_study type:/interests/hobby)";
-		$params["limit"] 	= 5;
+		$params["limit"] 	= 10;
 		$params["output"]	= "(/common/topic/description /common/topic/image)"; 
 		$freebase->get($params);
 
@@ -61,32 +51,86 @@ class TopicController extends \BaseController {
 		TODO: better error management.
 		*/
 		if(!empty( $result["error"]) ){
+			$errors = "";
 			foreach($result["error"]["errors"] as $error){
-				echo $error["message"] . "<br />";
+				$errors .= $error["message"] . "<br />";
 			}
-			die;
+			trigger_error( $errors );
+			return;
 		}
-		/* 
-		TODO: fix this
-		if(empty($topic_id)){
-			$related_mids = array();
-			foreach($result->result as $res){
-				if(!empty($res->mid))
-					$related_mids[] = $res->mid;
-			}
-		} else {
-			$related_mids = array($topic_id);
-		}*/
 
-		
 		$this->view_params["subject"] = $subject;
 		$this->view_params["topics"]  = $result["result"];
 
-		$this->layout = View::make( "newtopic.step2", $this->view_params );
+		$this->layout = View::make( "topic.step2", $this->view_params );
 	}
 
+	public function postStep3(){
+		$subject = Input::get("subject");
+		$topicIds = Input::get("topicId");
 
-	
+		$client = new Google_Client();
+		$client->setDeveloperKey( $this->google_api_key );
+		
+		///get youtube videos
+		$this->getYoutubeByTopic( $subject, $topicIds, $client );
 
+		///get google books
+		$this->getBooks( $topicIds );
+
+		//set up some vars for the template
+		$this->view_params["subject"] = $subject;
+
+		$this->layout = View::make("topic.show", $this->view_params);
+	}
+
+	/**
+	* Get youtube videos related to a list of topics from Freebase
+	*/
+	private function getYoutubeByTopic( $subject, $topicIds, Google_Client $client ){
+		if(empty($topicIds)){
+			return;
+		}
+
+		$youtube_api = new YouTubeReader($client);
+		$videos = array();
+		foreach($topicIds as $topicId){
+			$params = array(
+				'q' 			=> $subject,
+				'topicId'		=> $topicId,
+				'maxResults' 	=> 15,
+				'type' 			=> 'video',
+				'regionCode'	=> 'US'
+			);
+			$videos_aux = $youtube_api->getCourses($params);
+			$videos = array_merge($videos, $videos_aux["items"]);
+		}
+
+		$this->view_params["videos"] = $videos;
+
+	}
+
+	/**
+	* Get books from google books api, first it searches in freebase
+	*/
+	private function getBooks($topicIds){
+		if(empty($topicIds)){
+			return;
+		}
+
+		$freebase = App::make("RESTreader");
+		$freebase->set_endpoint( "https://www.googleapis.com/freebase/v1/search" );
+		//get all the topics the user has selected
+		$params = array(
+			'query' 	=> "",
+			'key' 		=> $this->google_api_key,
+			'filter'  	=> "(all type:/book/book subject:". implode(" subject:",$topicIds) .")",
+			'limit'		=> 10
+		);
+		$freebase->get($params);
+		$result = $freebase->resultArray();
+		
+		$this->view_params["books"] = $result["result"];
+	}
 
 }
