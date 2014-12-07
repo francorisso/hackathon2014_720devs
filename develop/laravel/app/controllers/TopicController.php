@@ -4,37 +4,56 @@ class TopicController extends \BaseController {
 
 	protected $layout = 'layout.master';
 
+	private $user_id = null;
 	//Google API key
 	private $google_api_key = "AIzaSyBUsuVB1YULi0Zmmjr4L0hCrDSrpBKzT-U";
-
 	private $view_params = array();
 	
 	public function __construct(){
-
+		$this->user_id = Auth::id();
 		$this->view_params["google_api_key"] = $this->google_api_key;
 	}
 
 	/**
 	* First step is asking the user what he wants to learn
 	*/
-	public function getIndex()
+	public function getAdd()
 	{
-		$this->layout = View::make( "topic.step1", $this->view_params );
+		$this->layout = View::make( "topic.add", $this->view_params );
 	}
 
 	/***
 	* In this step we refine the search with some help from the user
 	*/
-	public function postStep2(){
-		/**
-		TODO: securing form: http://laravel.com/docs/4.2/html
-		*/
+	public function postAdd(){
 		$subject = Input::get("subject");
 		$mid = Input::get("mid");
 		if(empty($subject)){
 			return Redirect::to('/');
 		}
-		
+
+		$topic = Topic::where(array('topic_id'=>$mid, "user_id"=> ($this->user_id) ))->get();
+		if(empty($topic) || empty($topic->id)){
+			$topic = new Topic;
+			$topic->topic_id 	= $mid;
+			$topic->user_id		= $this->user_id;
+			$topic->name		= $subject;
+			
+			$topic->save();
+		}
+
+		return Redirect::to( "/topics/details/".$topic->id );
+	}
+
+	public function getDetails( $topic_id ){
+		$topic = Topic::find($topic_id);
+		if(empty($topic)){
+			return Redirect::to("/");
+		}
+
+		$mid = $topic->topic_id;
+		$subject = $topic->name;
+
 		$client = new Google_Client();
 		$client->setDeveloperKey( $this->google_api_key );
 

@@ -12,8 +12,10 @@
 */
 
 
+Route::group(array('before'=>'auth'),function(){
+	Route::controller('/topics', 'TopicController');
+});
 
-Route::controller('/topics', 'TopicController');
-
+Route::controller('/users', 'UserController');
 
 Route::controller('/', 'HomeController');

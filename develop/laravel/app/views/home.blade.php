@@ -2,6 +2,6 @@
 
 @section("content")
 <section>
-	<a href="{{ action('TopicController@getIndex'); }}">Create topic</a>
+  <a href="{{ action('TopicController@getAdd'); }}">Create topic</a>
 </section>
 @stop
