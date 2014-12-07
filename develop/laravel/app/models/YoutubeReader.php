@@ -8,12 +8,7 @@ class YouTubeReader {
 		$this->google_client = $client;
 	}
 
-	public function getCourses( $params ){
-		$result = $this->search( $params );
-
-		return $result;
-	}
-
+	
 	/**
 	* Searches from Youtube
 	* NOTE: I prefer to do one request to optional arguments for each video instead of one call by video
@@ -23,7 +18,7 @@ class YouTubeReader {
 	* @param $q : keywords to search
 	* @return list of videos
 	*/
-	private function search( $params ){
+	public function search( $params, $parts ){
 	    // Define an object that will be used to make all API requests.
 	    $youtube = new Google_Service_YouTube( $this->google_client );
 	    $htmlBody = null;
@@ -48,7 +43,7 @@ class YouTubeReader {
 	    }
 
 	    try {
-	        $videos = $youtube->videos->listVideos('id,snippet,topicDetails', array(
+	        $videos = $youtube->videos->listVideos($parts, array(
 		        'id' 			=> implode(',', array_values( $video_ids ))
 	        ));
 	        
