@@ -12,6 +12,8 @@
 */
 
 
-Route::controller('', 'HomeController');
 
-Route::controller('topic', 'TopicController');
+Route::controller('/topics', 'TopicController');
+
+
+Route::controller('/', 'HomeController');
