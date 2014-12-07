@@ -7,11 +7,32 @@ class TopicController extends \BaseController {
 	private $user_id = null;
 	//Google API key
 	private $google_api_key = "AIzaSyBUsuVB1YULi0Zmmjr4L0hCrDSrpBKzT-U";
+	private $google_client;
 	private $view_params = array();
 	
-	public function __construct(){
+	public function __construct(Google_Client $google_client){
 		$this->user_id = Auth::id();
 		$this->view_params["google_api_key"] = $this->google_api_key;
+
+		$this->google_client = $google_client;
+		$this->google_client->setDeveloperKey( $this->google_api_key );
+	}
+
+	public function getIndex(){
+		if(!Input::ajax()){
+			trigger_error("Invalid page.");
+		}
+
+		//get topics
+		$topics = Topic::where(array("user_id"=>$this->user_id))
+		->orderBy('name', 'asc')
+		->get();
+
+		foreach($topics as &$topic){
+			$topic->permalink = url( '/topics/details/'.$topic->id );
+		}
+
+		return Response::json($topics);
 	}
 
 	/**
@@ -54,20 +75,47 @@ class TopicController extends \BaseController {
 		$mid = $topic->topic_id;
 		$subject = $topic->name;
 
-		$client = new Google_Client();
-		$client->setDeveloperKey( $this->google_api_key );
+		$this->showListing($mid, $subject);
+	}
 
+	public function getPreview($mid_1, $mid_2){
+		$mid = "/".$mid_1."/".$mid_2;
+		$freebase = App::make("RESTreader");
+		$freebase->set_endpoint( "https://www.googleapis.com/freebase/v1/search" );
+		//get all the topics the user has selected
+		$params = array(
+			'query' 	=> "",
+			'key' 		=> $this->google_api_key,
+			'filter'  	=> "(all mid:".$mid.")",
+			'limit'		=> 1
+		);
+		$freebase->get($params);
+		$result = $freebase->resultArray();
+
+		$topic = $result["result"][0];
+
+		$this->showListing($mid, $topic["name"]);
+	}
+	
+	/**
+	HELPERS
+	*/
+	
+	/**
+	* Get the content for the show page.
+	*/
+	private function showListing($mid, $subject){
 		/**
 		YouTube videos
 		*/
 		//This will be the first videos to show, related directly to the topic
 		//but searching for terms related to education
-		$videos = $this->getFromYoutube( "learn|education|how to|tutorial|course", $mid, $client );
+		$videos = $this->getFromYoutube( "learn|education|how to|tutorial|course", $mid );
 		
 		//Now I'll search for videos related to the search term 
 		//related to education (/m/028xmlk) and hobbies (/m/05cglf6) topic.
-		$videos = array_merge( $videos, $this->getFromYoutube( $subject, "/m/028xmlk", $client ) );
-		$videos = array_merge( $videos, $this->getFromYoutube( $subject, "/m/05cglf6", $client ) ); 
+		$videos = array_merge( $videos, $this->getFromYoutube( $subject, "/m/028xmlk") );
+		$videos = array_merge( $videos, $this->getFromYoutube( $subject, "/m/05cglf6") ); 
 
 		$this->view_params["videos"] = $videos;
 
@@ -90,12 +138,12 @@ class TopicController extends \BaseController {
 	/**
 	* Get youtube videos related to a topic from Freebase
 	*/
-	private function getFromYoutube( $search_term, $topicId, Google_Client $client ){
+	private function getFromYoutube( $search_term, $topicId ){
 		if(empty($topicId)){
 			return;
 		}
 
-		$youtube_api = new YouTubeReader($client);
+		$youtube_api = new YouTubeReader( $this->google_client );
 
 		//I search for videos related to the topic and bring all the topics of those videos
 		//I search for learning resources

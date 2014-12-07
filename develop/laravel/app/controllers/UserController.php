@@ -9,9 +9,6 @@ class UserController extends \BaseController {
 
 	private $view_params = array();
 	
-	/**
-	Basic controller for creating topics
-	*/
 	public function postLogin()
 	{
 		$fb_id = Input::get("id");
@@ -32,5 +29,9 @@ class UserController extends \BaseController {
 		return Response::json( $user );
 	}
 
+	public function postLogout()
+	{
+		Auth::logout();
+	}
 
 }

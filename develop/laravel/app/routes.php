@@ -14,6 +14,8 @@
 
 Route::group(array('before'=>'auth'),function(){
 	Route::controller('/topics', 'TopicController');
+	Route::controller('/videos', 'VideoController');
+	Route::controller('/boards', 'BoardController');
 });
 
 Route::controller('/users', 'UserController');

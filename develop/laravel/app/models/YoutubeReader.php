@@ -8,31 +8,48 @@ class YouTubeReader {
 		$this->google_client = $client;
 	}
 
-	
+	/**
+	* Searches a video for video ID
+	*/
+	public function getById( $id, $parts ){
+		// Define an object that will be used to make all API requests.
+	    $youtube = new Google_Service_YouTube( $this->google_client );
+		try {
+	        $videos = $youtube->videos->listVideos($parts, array(
+		        'id' => (is_array($id)? implode(',',$id) : $id)
+	        ));
+	    } catch (Google_ServiceException $e) {
+	        trigger_error(sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage())));
+	        return null;
+	    } catch (Google_Exception $e) {
+	        trigger_error(sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage())));
+	        
+	        return null;
+	    }
+	    
+	    if(is_array($id)){
+	    	return ( empty($videos["items"])? null : $videos["items"]);
+	    } else {
+	   		return ( empty($videos["items"])? null : $videos["items"][0]);
+	   	}
+	}
+
 	/**
 	* Searches from Youtube
-	* NOTE: I prefer to do one request to optional arguments for each video instead of one call by video
-	* because the time execution AND the cost of the API call. 
-	* So this generates a bit more of code to process all.
-	* 
-	* @param $q : keywords to search
 	* @return list of videos
 	*/
 	public function search( $params, $parts ){
 	    // Define an object that will be used to make all API requests.
 	    $youtube = new Google_Service_YouTube( $this->google_client );
-	    $htmlBody = null;
 	    try {
 	        // Call the search.list method to retrieve results matching the specified
 	        // query term.
 	        $result = $youtube->search->listSearch('id', $params);
 	    } catch (Google_ServiceException $e) {
-	        $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
-
+	        trigger_error(sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage())));
 	        return null;
 	    } catch (Google_Exception $e) {
-	        $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
-	        
+	        trigger_error(sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage())));
 	        return null;
 	    }
 
@@ -48,12 +65,10 @@ class YouTubeReader {
 	        ));
 	        
 	    } catch (Google_ServiceException $e) {
-	        $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
-
+	        trigger_error(sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage())));
 	        return null;
 	    } catch (Google_Exception $e) {
-	        $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
-	        
+	        trigger_error(sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage())));
 	        return null;
 	    }
 	    

@@ -12,7 +12,7 @@
 	<title>Hobbies and Careers</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -21,11 +21,11 @@
 	<![endif]-->
 
 	<!-- Custom styles for this template -->
-	<link href="{{ url('/css/landing.css') }}" rel="stylesheet">
+	<link href="css/landing.css" rel="stylesheet">
 
 	<!-- Library styles -->
-	<link href="{{ url('/css/superslides.css') }}" rel="stylesheet">
-	<link href="{{ url('/css/jquery.fancybox.css') }}" rel="stylesheet">
+	<link href="css/superslides.css" rel="stylesheet">
+	<link href="css/jquery.fancybox.css" rel="stylesheet">
 
 	<!-- Specials Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -39,8 +39,8 @@
 	
 	<div id="slider-top">
 		<div class="slides-container">
-			<img src="{{ url('/images/slider1.jpg') }}" alt="Slider 1">
-			<img src="{{ url('/images/slider2.jpg') }}" alt="Slider 2">
+			<img src="images/slider1.jpg" alt="">
+			<img src="images/slider2.jpg" alt="">
 		</div>
 	</div>
 
@@ -52,7 +52,7 @@
     				<strong>It's Nice To Meet You</strong>
     			</h2>
     			<div class="buttons">
-    				<a href="#" onclick="javascript:fb_login();" rel="no-follow" class="btn-xl fb">Facebook SIGN UP</a>
+    				<a href="#" class="btn-xl fb">Facebook SIGN UP</a>
 					<a class="fancybox-media btn-xl" href="//www.youtube.com/embed/opj24KnzrWo">Video Tour</a>
     			</div>
     		</div>
@@ -159,7 +159,7 @@
 		<strong>It's Nice To Meet You</strong>
 	</h2>
 	<div class="buttons">
-		<a href="#" onclick="javascript:fb_login();" rel="no-follow" class="btn-xl fb">Facebook SIGN UP</a>
+		<a href="#" class="btn-xl fb">Facebook SIGN UP</a>
 		<a class="fancybox-media btn-xl" href="//www.youtube.com/embed/opj24KnzrWo">Video Tour</a>
 	</div>
 </div><!-- /.container -->
@@ -167,7 +167,7 @@
 <div class="container">
 	<footer>
 		<p class="pull-right"><a href="#video-tour">Back to top</a></p>
-		<p>&copy; {{ date("Y") }} &middot; <a href="http://www.720developments.com/" target="_blank">720 Developments</a> &middot; All rights reserved</p>
+		<p>&copy; 2014 &middot; <a href="http://www.720developments.com/" target="_blank">720 Developments</a> &middot; All rights reserved</p>
 	</footer>
 </div><!-- /.container -->
 
@@ -186,56 +186,6 @@
 	slider.init();
 	scrollMenu.init();
 	fancybox2.init();
-</script>
-<script type="text/javascript">
-	var domain = "{{{ url("/") }}}";
-
-	function fb_login(){
-		FB.login(function(response) {
-			checkLoginState();
-	    }, {
-	        scope: 'public_profile,email'
-	    });
-	}
-
-	// This is called with the results from from FB.getLoginStatus().
-	function statusChangeCallback(response) {
-		if (response.status === 'connected') {
-			FB.api( '/me', function(response) {
-				$.post(domain + "/users/login", response, function(res){
-					location.reload();
-				});
-			});	
-		}
-	}
-
-	// This function is called when someone finishes with the Login
-	// Button.  See the onlogin handler attached to it in the sample
-	// code below.
-  	function checkLoginState() {
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-		});
-	}
-
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '312830828910502',
-			cookie     : true,  // enable cookies to allow the server to access 
-			xfbml      : true,  // parse social plugins on this page
-			version    : 'v2.1' // use version 2.1
-		});
-  	};
-
-	// Load the SDK asynchronously
-	(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-
 </script>
 </body>
 </html>
