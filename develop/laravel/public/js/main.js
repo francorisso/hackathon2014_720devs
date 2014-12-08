@@ -77,6 +77,25 @@ var ListView = {
 	}
 };
 
+var Topics = {
+	add: function(){
+		$("#suggestion_box")
+		.suggest({ key: "{{ $google_api_key }}" })
+		.bind("fb-select", function(e, data){
+			if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
+				$('#f_mid').val( data.mid );	
+			}
+		});
+
+		$('.add-button').on('click',function(e){
+			e.preventDefault();
+			$(this).hide(1);
+			$('.search').show(1);
+		});
+	},
+
+};
+
 var LoadComponents = {
 	boards: function(callback){
 		$.getJSON( domain + '/boards',{},function(res){

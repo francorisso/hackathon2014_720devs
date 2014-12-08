@@ -28,13 +28,7 @@
 @section("scripts")
 <script type="text/javascript">
 $(function() {
-	$("#suggestion_box")
-	.suggest({ key: "{{ $google_api_key }}" })
-	.bind("fb-select", function(e, data){
-		if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
-			$('#f_mid').val( data.mid );	
-		}
-;	});
+	Topics.add();
 });
 </script>
 @stop

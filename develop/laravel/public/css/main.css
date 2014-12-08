@@ -600,6 +600,7 @@ h1.logo a{
 
 /* ----------------------- 4.2 Search ----------------------- */
 .search{
+    display: none;
     width: 500px;
     margin: 200px auto;
     position: relative;
