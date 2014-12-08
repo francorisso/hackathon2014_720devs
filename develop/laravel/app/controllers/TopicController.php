@@ -193,7 +193,7 @@ class TopicController extends \BaseController {
 		$freebase->get($params);
 		$result = $freebase->resultArray();
 		
-		$this->view_params["books"] = $result["result"];
+		$this->view_params["books"] = (!empty($result)? $result["result"] : null );
 	}
 
 	/**
@@ -216,7 +216,7 @@ class TopicController extends \BaseController {
 		$freebase->get($params);
 		$result = $freebase->resultArray();
 		
-		$this->view_params["films"] = $result["result"];
+		$this->view_params["films"] = (!empty($result)? $result["result"] : null );
 	}
 
 }
