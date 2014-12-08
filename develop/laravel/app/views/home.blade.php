@@ -25,12 +25,4 @@
 </div><!-- /.container-fluid -->
 
 
-@section("scripts")
-<script type="text/javascript">
-$(function() {
-	Topics.add();
-});
-</script>
-@stop
-
 @stop

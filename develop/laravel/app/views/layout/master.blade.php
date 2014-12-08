@@ -153,6 +153,7 @@
 
 	//load components
   	$(function(){
+		Topics.add();
   		LoadComponents.boards();
   		LoadComponents.topics();
   	});
