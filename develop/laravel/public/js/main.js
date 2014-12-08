@@ -110,7 +110,7 @@ var LoadComponents = {
 	},
 
 	profilePic: function(){
-		console.log('eh?');
+		console.log('eh?  sdsd');
 		FB.api(
 			"/me/picture",
 		    {
