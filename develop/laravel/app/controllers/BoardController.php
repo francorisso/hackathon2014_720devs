@@ -13,6 +13,7 @@ class BoardController extends \BaseController {
 		$this->google_client = $google_client;
 		$this->google_client->setDeveloperKey( $this->google_api_key );
 		$this->user_id = Auth::id();
+		$this->view_params["google_api_key"] = $this->google_api_key;
 	}
 
 	public function getAdd( $videoId ){

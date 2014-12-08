@@ -10,24 +10,33 @@
 		</a>
 
 		<div class="search">
-			<input class="form-control input-lg" type="text" placeholder="Ex. Garden, Photography, etc.">
-			<button type="button" class="btn btn-primary">Search</button>
+			{{ Form::open(array('url' => 'topics/add', 'method'=>'post')) }}
+				{{ Form::hidden('mid','',array('id'=>'f_mid')) }}
+
+				{{ Form::text('subject','',array(
+											'id'=>'suggestion_box'
+											,"class"=>"form-control input-lg"
+											,"placeholder"=>"Ex. Garden, Photography, etc.")
+								) }}<br />
+				{{ Form::submit("Search",array("class"=>"btn btn-primary")) }}
+			{{ Form::close() }}
 		</div>
 	</div><!-- /.board-list -->
-
-	<div class="user">
-		<div class="profile">
-			<img src="images/profile.jpg" alt="" class="img-circle">
-			<span class="name">Mariana Stariolo</span>
-			<span><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> Córdoba, Argentina</span>
-		</div>
-
-		<h3>Your Interested:</h3>
-		<a href="#" class="add-button">
-			<i class="icon-more"></i>
-			Add
-		</a>
-	</div><!-- /.user -->
 </div><!-- /.container-fluid -->
+
+
+@section("scripts")
+<script type="text/javascript">
+$(function() {
+	$("#suggestion_box")
+	.suggest({ key: "{{ $google_api_key }}" })
+	.bind("fb-select", function(e, data){
+		if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
+			$('#f_mid').val( data.mid );	
+		}
+;	});
+});
+</script>
+@stop
 
 @stop

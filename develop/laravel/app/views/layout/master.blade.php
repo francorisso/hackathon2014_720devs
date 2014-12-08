@@ -75,6 +75,10 @@
 
 	<h3>Your Interests:</h3>
 	<div class="tags" id="component-topics"></div>
+	<a href="#" class="add-button">
+		<i class="icon-more"></i>
+		Add
+	</a>
 </div><!-- /.user -->
 
 	<!-- Bootstrap core JavaScript
