@@ -79,8 +79,15 @@ var ListView = {
 
 var Layout = {
 	setSidebarSize: function(){
+		Layout._setSidebarSize();
+		$(window).resize(function(){
+			Layout._setSidebarSize();
+		});
+	},
+
+	_setSidebarSize: function(){
 		$('.user').height( $(window).height() );
-	}
+	}	
 };
 
 var Topics = {
