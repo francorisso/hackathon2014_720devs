@@ -4,7 +4,7 @@
 
 <div class="container-fluid clearfix">
 	<div class="board-list clearfix">
-		@if($is_preview===true)
+		@if(!empty($is_preview) && $is_preview===true)
 			<div class="add_this_tag">
 				Topic: {{ $subject }} <a href="">Add to my topics</a>
 			</div>
