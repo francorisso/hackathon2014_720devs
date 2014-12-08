@@ -73,6 +73,8 @@
 <script src="{{ url('js/jquery.fancybox.pack.js') }}"></script>
 <script src="{{ url('js/main.js') }}"></script>
 <script>
+	var domain = "{{ url("/") }}";
+
 	$(function(){
 		$('.tag').click(function(e){
 			e.preventDefault();
