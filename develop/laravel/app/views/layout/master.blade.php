@@ -87,7 +87,7 @@
 
 			{{ Form::text('subject','',array(
 										'id'=>'suggestion_box'
-										,"class"=>"form-control input-lg"
+										,"class"=>"form-control input-lg suggestion_box"
 										,"placeholder"=>"Ex. Garden, Photography, etc.")
 							) }}<br />
 			{{ Form::submit("Search",array("class"=>"btn btn-primary")) }}
