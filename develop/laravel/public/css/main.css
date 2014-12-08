@@ -477,6 +477,10 @@ h1.logo a{
     width: 50px;
 }
 
+.fbs-pane{
+    z-index: 999;
+}
+
 .tags{
     float:left;
 }
