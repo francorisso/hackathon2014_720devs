@@ -146,8 +146,8 @@ class TopicController extends \BaseController {
 		*/
 		$this->getFilms( array($mid) );
 
+		$this->view_params["mid"] = $mid;
 		$this->view_params["subject"] = $subject;
-		
 
 		$this->layout = View::make( "topic.show", $this->view_params );
 	}

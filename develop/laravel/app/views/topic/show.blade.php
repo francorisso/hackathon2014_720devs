@@ -6,7 +6,11 @@
 	<div class="board-list clearfix">
 		@if(!empty($is_preview) && $is_preview===true)
 			<div class="add_this_tag">
-				<h2>Topic: {{ $subject }} <a href="">Add to my topics</a></h2>
+				<h2>Topic: {{ $subject }} 
+					<a href="javascript://" onclick="javascript:add_topic('{{ $mid }}','{{ $subject }}');" class="to_my_topics">
+						Add to my topics
+					</a>
+				</h2>
 			</div>
 		@endif
 		<div class="list" id="grid">
@@ -92,5 +96,9 @@
 @section("scripts")
 	<script type="text/javascript">
 		ListView.init();
+
+		function add_topic(topic_id, subject){
+			$.post(domain+"topics/add",{ mid: topic_id, subject: subject });
+		}
 	</script>
 @stop

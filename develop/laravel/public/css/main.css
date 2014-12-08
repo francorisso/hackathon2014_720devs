@@ -220,6 +220,12 @@ h1.logo a{
     margin-top: 3px;
 }
 
+.to_my_topics{
+    font-size: 10px;
+    text-decoration: underline;
+    color:#00f;
+}
+
 /* ----------------------- 2.2 Footer ----------------------- */
 #footer{
 	width: 100%; 
