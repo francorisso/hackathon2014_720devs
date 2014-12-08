@@ -83,10 +83,9 @@
 	</a>
 	<div class="search">
 		{{ Form::open(array('url' => 'topics/add', 'method'=>'post')) }}
-			{{ Form::hidden('mid','',array('id'=>'f_mid')) }}
+			{{ Form::hidden('mid','',array('class'=>'f_mid')) }}
 
 			{{ Form::text('subject','',array(
-										'id'=>'suggestion_box'
 										,"class"=>"form-control input-lg suggestion_box"
 										,"placeholder"=>"Ex. Garden, Photography, etc.")
 							) }}<br />
@@ -107,9 +106,9 @@
 		$(".suggestion_box")
 		.suggest({ key: "{{ $google_api_key }}" })
 		.bind("fb-select", function(e, data){
-			console.log(e);
+			var element = e.target;
 			if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
-				$('#f_mid').val( data.mid );	
+				element.find('.f_mid').val( data.mid );	
 			}
 		});
 	</script>
