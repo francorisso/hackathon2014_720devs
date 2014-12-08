@@ -116,9 +116,9 @@ var LoadComponents = {
 			"/me/picture",
 		    {
 		        "redirect": false,
-		        "height": "200",
+		        "height": "120",
 		        "type": "normal",
-		        "width": "200"
+		        "width": "120"
 		    },
 		    function (response) {
 				if (response && !response.error) {
