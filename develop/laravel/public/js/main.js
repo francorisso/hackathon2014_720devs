@@ -114,7 +114,7 @@ var LoadComponents = {
 		FB.api(
 			"/me/picture",
 		    {
-		        "redirect": false,
+		        "redirect": true,
 		        "height": "200",
 		        "type": "normal",
 		        "width": "200"
