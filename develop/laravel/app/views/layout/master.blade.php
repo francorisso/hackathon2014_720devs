@@ -153,7 +153,6 @@
 
 	//load components
   	$(function(){
-  		Layout.setSidebarSize();
   		LoadComponents.boards();
   		LoadComponents.topics();
   	});
