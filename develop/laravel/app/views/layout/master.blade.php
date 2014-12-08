@@ -85,7 +85,7 @@
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="{{ url('/js/jquery.freebase-suggest.js') }}"></script>
 	<script src="{{ url('/js/bootstrap.min.js') }}"></script>
 	<script src="{{ url('/js/docs.min.js') }}"></script>
