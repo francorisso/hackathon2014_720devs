@@ -123,6 +123,7 @@ var LoadComponents = {
 		    function (response) {
 				if (response && !response.error) {
 					$('.profile .img-circle').attr('src',response.data.url);
+					$('.profile .img-circle').fadeIn(200);
 				}
 		    }
 		);
