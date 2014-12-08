@@ -89,7 +89,7 @@
 				$.fancybox.close();
 			});
 		};
-		$.post(domain+'/addVideo',{"boardId": boardId, "videoId": videoId},function(){
+		$.post(domain+'/boards/addVideo',{"boardId": boardId, "videoId": videoId},function(){
 			reloadBoards();
 		});
 	}
