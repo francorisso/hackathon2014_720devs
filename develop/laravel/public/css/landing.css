@@ -1,0 +1,453 @@
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*
+Theme Name: Hobbies & Careers
+Theme URL: http://www.720developments.com/
+Author: Mariana Stariolo
+Author URI: http://www.720developments.com/
+Version: 1.0
+*/
+
+/*-------------------------------------------------------------------------------------------
+
+INDEX:
+
+1. GLOBAL
+-1.1 Defaults
+-1.2 Text
+
+2. APPEARANCE AND STRUCTURE OF THE SITE
+-2.1 Header/Top
+-2.2 Footer
+
+3. LANDING
+-3.1 Banner
+-3.2 Features
+-3.3 Sign Up
+
+
+-------------------------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 1. GLOBAL */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 1.1 Defaults ----------------------- */
+
+@-ms-viewport       { width: device-width; }
+
+*{
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; 
+  font-size: 13px; 
+  color: #404040; 
+  line-height: 23px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html{
+  background-color: #FFF;
+  height: 100%;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.img-responsive{
+  width: 100%;
+  height: auto;
+}
+
+/* ----------------------- 1.2 Text ----------------------- */
+p{
+  margin: 0; 
+  padding: 0; 
+  text-align: left;
+}
+
+p em{ 
+  color: #999; 
+}
+
+a{ 
+  text-decoration: none;
+  font-size: inherit; 
+  outline: none;
+  color: #303231; 
+  -webkit-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+  -o-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+  -moz-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+  -ms-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s;
+  transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+}
+
+a:hover, a:active, a:focus{ 
+  text-decoration: none; 
+  outline: none;
+  color: inherit;
+}
+
+strong{
+  font-size: inherit;
+}
+
+/* --- Title --- */
+.page-header h2{
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 40px;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.page-header h3{
+  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 75px;
+  text-transform: none;
+  color: #888;
+  padding: 0;
+  margin: 0;
+}
+
+h2{
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 2. APPEARANCE AND STRUCTURE OF THE SITE */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 2.1 Header/Top ----------------------- */
+.navbar-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+/* --- Logo --- */
+h1.logo{
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 167px;
+  height: 54px;
+}
+
+h1.logo a{
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 54px;
+  text-indent: -10000px;
+  background: url(../images/logo.png) 0 0 no-repeat;
+  background-size: 100%;
+}
+
+/* --- Menu --- */
+.navbar .navbar-right {
+  margin-right: 0;
+  padding: 10px 0;
+}
+
+.navbar-nav > li > a{
+  font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif; 
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #FFF;
+}
+
+.navbar-nav > li.active > a, .navbar-nav > li > a:focus, .navbar-nav > li > a:hover, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus,
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+  color: #FFF;
+  background-color: #2e639e;
+}
+
+.navbar-nav > li > a:focus .caret, .navbar-nav > li > a:hover .caret{
+  color: #FFF;
+}
+
+.dropdown-menu > li > a{
+  padding: 6px 20px;
+  font-size: 13px;
+}
+
+.navbar-toggle .icon-bar{
+  background-color: #2e639e;
+  height: 4px;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 3px;
+}
+
+.navbar-white{
+  margin: 0;
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(160, 160, 160, 1);
+  -moz-box-shadow:    0px 2px 6px 0px rgba(160, 160, 160, 1);
+  box-shadow:         0px 2px 6px 0px rgba(160, 160, 160, 1);
+  border-bottom: none;
+  background-color: #fff;
+}
+
+.navbar-white .navbar-nav li a{
+  color: #404040;
+}
+
+.navbar-white .navbar-nav li.active a, .navbar-white .navbar-nav li a:focus, .navbar-white .navbar-nav li a:hover, .navbar-white .nav .open a, .navbar-white .nav .open a:hover, .navbar-white .nav .open a:focus,
+.navbar-white .dropdown-menu li a:hover, .navbar-white .dropdown-menu li a:focus{
+  color: #FFF;
+  background-color: #2e639e;
+}
+
+
+/* ----------------------- 2.2 Footer ----------------------- */
+footer{
+  padding: 10px 0;
+}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 3. LANDING */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 3.1 Banner ----------------------- */
+.slider{
+  position: relative;
+}
+
+#caption {
+  position: absolute;
+  z-index: 2; 
+  width: 100%; 
+  height: 100%;
+  background: none;
+  top: 0;
+  left:  0;
+  background: rgba(0,0,0,0.3);
+}
+
+.caption{
+  display: table;
+  width: 100%; 
+  height: 100%;
+  position: relative;
+}
+
+.text{
+  display: table-cell;
+  vertical-align: middle;
+  color: #FFF;
+  text-align: center;
+  background: none;
+  padding: 0;
+}
+
+.text h2, #sign-up h2{
+  margin: 0 0 50px;
+  padding: 0; 
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 40px;
+  color: #FFF;
+  font-family: "Droid Serif",Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-style: italic;
+  text-transform: none;
+}
+
+.text h2 strong, #sign-up h2 strong{
+  display: block;
+  font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif; 
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 75px;
+  color: #FFF;
+  font-style: normal;
+  margin: 20px 0 0;
+}
+
+.text h2:after{
+  display: none;
+}
+
+.buttons{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.btn-xl {
+  display: block;
+  float: right;
+  background-color: #fec503;
+  border-color: #fec503;
+  border-radius: 3px;
+  color: #fff;
+  font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 40px;
+  text-transform: uppercase;
+}
+
+.btn-xl:hover, .btn-xl:active, .btn-xl:focus{
+  background-color: #f0ad4e;
+  color: #FFF;
+}
+
+.btn-xl.fb{
+  float: left;
+  background-color: #2e639e;
+  border-color: #2e639e;
+  background-image: url(../images/icon-facebook.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 55px
+}
+
+.btn-xl.fb:hover, .btn-xl.fb:active, .btn-xl.fb:focus{
+  background-color: #244e7d;
+  color: #FFF;
+}
+
+.slides-pagination{
+  display: none;
+}
+
+.slides-control{
+  z-index: 1;
+}
+
+
+/* ----------------------- 3.2 Features ----------------------- */
+.bg-grey{
+  background: #F5F5F5;
+  padding: 70px 0 50px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.page-header{
+  border-bottom: none;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.bg-grey .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bg-grey .col-lg-4 img{
+  margin: 0 auto 15px;
+}
+
+.bg-grey h2 {
+  font-weight: normal;
+}
+
+.bg-grey .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.features{
+  padding: 50px 15px 0;
+}
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.featurette-heading {
+  font-size: 40px;
+}
+
+/* ----------------------- 3.3 Sign Up ----------------------- */
+#sign-up{
+  margin-top: 80px;
+  padding: 100px 0 90px;
+  background: url(../images/people.jpg) center center repeat;
+  text-align: center;
+  background-attachment: fixed;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}

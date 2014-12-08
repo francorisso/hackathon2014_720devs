@@ -1,0 +1,914 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*
+Theme Name: Hobbies & Careers
+Theme URL: http://www.720developments.com/
+Author: Mariana Stariolo
+Author URI: http://www.720developments.com/
+Version: 1.0
+*/
+
+/*-------------------------------------------------------------------------------------------
+
+INDEX:
+
+1. GLOBAL
+-1.1 Defaults
+-1.2 Text
+
+2. APPEARANCE AND STRUCTURE OF THE SITE
+-2.1 Header/Top
+-2.2 Footer
+
+3. RESULTS PAGE
+-3.1 Board
+-3.2 Fancybox
+-3.3 User tags
+
+4. ADD INTEREST
+-4.1 Add
+-4.2 Search
+
+
+-------------------------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 1. GLOBAL */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 1.1 Defaults ----------------------- */
+
+@-ms-viewport       { width: device-width; }
+
+*{
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; 
+	font-size: 13px; 
+	color: #404040; 
+	line-height: 19px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, html{
+    background-color: #e5e5e5;
+    height: 100%;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.img-responsive{
+    width: 100%;
+    height: auto;
+}
+
+/* ----------------------- 1.2 Text ----------------------- */
+p{
+	margin: 0; 
+	padding: 0; 
+	text-align: left;
+}
+
+p em{ 
+	color: #999; 
+}
+
+a{ 
+    text-decoration: none;
+    font-size: inherit; 
+    outline: none;
+    color: #303231; 
+    -webkit-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+    -o-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+    -moz-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+    -ms-transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s;
+    transition: background-color 0.2s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s, outline 0.2s ease 0s; 
+}
+
+a:hover, a:active, a:focus{ 
+	text-decoration: none; 
+	outline: none;
+    color: inherit;
+}
+
+strong{
+	font-size: inherit;
+}
+
+/* --- Title --- */
+
+/* --- Fonts --- */
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 2. APPEARANCE AND STRUCTURE OF THE SITE */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 2.1 Header/Top ----------------------- */
+.navbar-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+}
+
+/* --- Logo --- */
+h1.logo{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 167px;
+    height: 54px;
+}
+
+h1.logo a{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 54px;
+    text-indent: -10000px;
+    background: url(../images/logo.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+/* --- Menu --- */
+.navbar-white{
+    margin: 0;
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(160, 160, 160, 1);
+    -moz-box-shadow:    0px 2px 6px 0px rgba(160, 160, 160, 1);
+    box-shadow:         0px 2px 6px 0px rgba(160, 160, 160, 1);
+    border-bottom: none;
+    background-color: #fff;
+}
+
+.navbar-white .navbar-right {
+    margin-right: 0;
+    padding: 10px 0;
+}
+
+.navbar-nav > li > a{
+    font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif; 
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.navbar-nav > li > a:focus, .navbar-nav > li > a:hover, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus,
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    color: #FFF;
+    background-color: #2e639e;
+}
+
+.navbar-nav > li > a:focus .caret, .navbar-nav > li > a:hover .caret{
+    color: #FFF;
+}
+
+.dropdown-menu > li > a{
+    padding: 6px 20px;
+    font-size: 13px;
+}
+
+.navbar-toggle .icon-bar{
+    background-color: #2e639e;
+    height: 4px;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 3px;
+}
+
+.to_my_topics{
+    font-size: 14px;
+    text-decoration: underline;
+    color:#00f;
+}
+
+/* ----------------------- 2.2 Footer ----------------------- */
+#footer{
+	width: 100%; 
+	margin: 30px 0 0; 
+	padding: 0;
+}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 3. RESULTS PAGE */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 3.1 Board ----------------------- */
+.container-fluid{
+    position: relative;
+}
+
+.board-list{
+    width: 100%;
+    padding: 54px 230px 0 0;
+    min-height: 100%;
+}
+
+.board-list .list, .pagination-wrapper{
+    float: left;
+}
+
+.board-list .list{
+    padding-top: 20px;
+    margin: 0 -10px;
+    width: 100%;
+}
+
+/* --- Learn & Jobs Boxes --- */
+.board-list .col-sm-6{
+    padding: 10px;
+    max-width: 440px;
+}
+
+.board-list .box, .bg-video .box{
+    background: #FFF;
+    border: 1px solid #d8d8d8;
+    border-bottom: 2px solid #d8d8d8;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    float: left;
+    padding: 0;
+    width: 100%;
+}
+
+.special-box .panel-heading, .special-box2 .panel-heading{
+    background-color: #2e639e;
+    font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.special-box2 .panel-heading{
+    background-color: #f0ad4e;
+}
+
+.btn-default {
+    border-color: #d8d8d8;
+    color: #666;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(221, 221, 221, 1);
+    -moz-box-shadow:    0px 1px 1px 0px rgba(221, 221, 221, 1);
+    box-shadow:         0px 1px 1px 0px rgba(221, 221, 221, 1);
+}
+
+.btn-default .glyphicon{
+    color: #666;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:focus{
+    color: #FFF;
+    background-color: #2e639e;
+    border-color: #244e7d;
+}
+
+.btn-default:hover .glyphicon, .btn-default:active .glyphicon, .btn-default:focus .glyphicon{
+    color: #FFF;
+    background-color: #2e639e;
+    border-color: #244e7d;
+}
+
+.tag {
+    background-color: #2e639e;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    padding: 0 22px;
+    line-height: 24px;
+    font-size: 12px;
+    color: #FFF;
+    display: block;
+    float: left;
+}
+
+.tag:hover, .tag:focus{
+    color: #444;
+    background-color: #ccc;
+}
+
+.panel-footer .tag{
+    float: right;
+    margin: 3px 0 0 5px;
+}
+
+.list-group{
+    margin: 15px 0 0;
+}
+
+.list-group-item a{
+    display: block;
+}
+
+.list-group-item span{
+    display: block;
+    margin: -5px 0 3px;
+    font-style: italic;
+}
+
+.list-group-item-text{
+    color: #666;
+}
+
+.list-group-item-heading{
+    font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.list-group-item.active, .list-group-item:hover, .list-group-item:focus {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+    z-index: 2;
+}
+
+.special-box2 .list-group-item.active, .special-box2 .list-group-item:hover, .special-box2 .list-group-item:focus {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+
+.list-group-item.active .list-group-item-heading, .list-group-item:hover .list-group-item-heading, .list-group-item:focus .list-group-item-heading,
+.list-group-item.active span, .list-group-item:hover span, .list-group-item:focus span{
+    color: #FFF;
+}
+
+.list-group-item.active .list-group-item-text, .list-group-item:hover .list-group-item-text, .list-group-item:focus .list-group-item-text{
+    color: #c7ddef;
+}
+
+.special-box2 .list-group-item.active .list-group-item-text, .special-box2 .list-group-item:hover .list-group-item-text, .special-box2 .list-group-item:focus .list-group-item-text{
+    color: #f2f2f2;
+}
+
+/* --- Video Boxes --- */
+.board-list .box .page-header, .bg-video .box .page-header{
+    margin: 0 0 10px;
+}
+
+.board-list .box .page-header h2, .bg-video .box .page-header h2{
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.box figure{
+    width: 100%;
+    margin: 10px 0 0;
+    position: relative;
+}
+
+.box figure img{
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.box figure a{
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+.box figure a:before, .related a:before{
+    content: " ";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: url(../images/icon-play.png) center no-repeat rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------------- 3.2 Fancybox ----------------------- */
+.bg-video{
+    background-color: transparent;
+}
+
+.bg-video .box{
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    border: none;
+    margin: 10px 0;
+}
+
+.bg-video .box .embed-responsive{
+    margin-bottom: 10px
+}
+
+/* ----------------------- 3.3 User Tags ----------------------- */
+.user{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: #f2f5f5;
+    border-left: 1px solid #d8d8d8;
+    height: 100%;
+    padding: 70px 15px 0;
+    width: 230px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.user .profile{
+    width: 100%;
+    padding: 0 0 25px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #d8d8d8;
+    text-align: center;
+}
+
+.user .search{
+    display: none;
+    width: 200px;
+    margin: 20px auto;
+    position: relative;
+    float:left;
+}
+
+.user .search .btn-primary{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    text-indent: -9999px;
+    background-image: url(../images/icon-search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+}
+
+.fbs-pane{
+    z-index: 999;
+}
+
+.tags{
+    float:left;
+}
+
+.img-circle{
+    display: none;
+    background: #FFF;
+    padding: 5px;
+    border: 1px solid #d8d8d8;
+    margin: 0 auto 5px;
+}
+
+.user .profile .name{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: #788188;
+    margin-bottom: 5px;
+}
+
+.user .profile span{
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    line-height: 15px;
+    color: #939aa0;
+}
+
+.user .profile i{
+    font-size: 13px;
+    line-height: 15px;
+    color: #939aa0;
+}
+
+.user h3{
+    text-transform: uppercase;
+    font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    color: #788188;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.user .tag{
+    padding-right: 15px;
+    line-height: 26px;
+    margin: 0 5px 10px 0;
+}
+
+.user .tag:hover, .user .tag:focus{
+    background-color: #2e639e;
+}
+
+.user .tag a{
+    color: #FFF;
+    font-size: 12px;
+    line-height: 20px;
+    display: inline-block;
+}
+
+.user .tag a:hover, .user .tag a:focus{
+    color: #ccc;
+}
+
+.user .tag a.glyphicon{
+    font-size: 11px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 0 0 0 10px;
+}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 4. ADD INTEREST */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 4.1 Add ----------------------- */
+
+/* --- Column Left --- */
+.min-height100{
+    min-height: 100%;
+}
+
+.add-wrapper{
+    height: 100%;
+    display: table;
+}
+
+.add-button{
+    display: block;
+    width: 300px;
+    margin: 160px auto 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #939aa0;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    letter-spacing: -1px
+}
+
+.add-button:hover, .add-button:active, .add-button:focus{
+    color: #939aa0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.icon-more{
+    display: block;
+    margin: 0 auto 10px;
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border-radius: 150px;
+    background: url(../images/icon-more.png) center no-repeat;
+    text-align: center;
+    line-height: 150px;
+    border: 15px solid #939aa0;
+}
+
+/* --- Aside --- */
+.user .add-button{
+    width: 100%;
+    margin: 40px auto 0;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0;
+    float:left;
+}
+
+.user .icon-more{
+    margin: 0 auto 5px;
+    width: 70px;
+    height: 70px;
+    border: 7px solid #939aa0;
+    -webkit-background-size: 26px;
+    background-size: 26px;
+}
+
+/* ----------------------- 4.2 Search ----------------------- */
+.search{
+    display: none;
+    width: 500px;
+    margin: 200px auto;
+    position: relative;
+}
+
+.search .btn-primary{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    text-indent: -9999px;
+    background-image: url(../images/icon-search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+}
+
+
+
+/* =========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 991px) {
+/*-------------------------------------------------------------------------------------------*/
+/* 4. RESULTS PAGE */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 4.1 Board ----------------------- */
+.panel-footer .tag{
+    float: left;
+    margin: 7px 5px 0 0;
+}
+
+/* ----------------------- 4.3 Fancybox ----------------------- */
+.bg-video .panel-footer .tag {
+    float: right;
+    margin: 3px 0 0 5px;
+}
+
+}
+
+@media (max-width: 767px) {
+
+/*-------------------------------------------------------------------------------------------*/
+/* 4. RESULTS PAGE */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 4.1 Board ----------------------- */
+.board-list{
+    padding: 54px 0 20px;
+}
+
+.board-list .col-sm-6 {
+    max-width: 100%;
+    padding: 10px;
+    float: left;
+}
+
+/* ----------------------- 4.3 User Tags ----------------------- */
+.user{
+    position: static;
+    background: #f2f5f5;
+    border: 1px solid #d8d8d8;
+    height: 100%;
+    padding: 15px;
+    width: 100%;
+    float: left;  
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* 4. ADD INTEREST */
+/*-------------------------------------------------------------------------------------------*/
+
+/* ----------------------- 4.1 Add ----------------------- */
+
+/* --- Column Left --- */
+.add-button{
+    width: 270px;
+    margin: 50px auto 20px;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.icon-more{
+    width: 130px;
+    height: 130px;
+    -webkit-border-radius: 130px;
+    -moz-border-radius: 130px;
+    border-radius: 130px;
+    border: 10px solid #939aa0;
+}
+
+/* --- Aside --- */
+.user .add-button{
+    width: 100%;
+    margin: 40px auto 0;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0;
+}
+
+.user .icon-more{
+    margin: 0 auto 5px;
+    width: 70px;
+    height: 70px;
+    border: 7px solid #939aa0;
+    -webkit-background-size: 26px;
+    background-size: 26px;
+}
+
+/* ----------------------- 4.2 Search ----------------------- */
+.search{
+    width: 290px;
+    margin: 80px auto;
+}
+
+.search .input-lg{
+    font-size: 14px;
+}
+
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
