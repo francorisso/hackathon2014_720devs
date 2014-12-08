@@ -6,7 +6,6 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
-error_reporting(E_ALL);
 
 /*
 |--------------------------------------------------------------------------
