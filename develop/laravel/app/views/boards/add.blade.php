@@ -44,7 +44,7 @@
 						<ul>
 							@foreach( $boards as $board )
 								<li>
-									<a href="javascript:add_to_board({{ $board->id }},{{ $videoId }})">{{{ $board->name }}}</a>
+									<a href="javascript:add_to_board({{ $board->id }},'{{ $videoId }}')">{{{ $board->name }}}</a>
 								</li>
 							@endforeach
 						</ul>
