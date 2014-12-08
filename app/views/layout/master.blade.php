@@ -101,7 +101,7 @@
 	<script type="text/javascript">
 		var $ = $.noConflict();
 	</script>
-	<script src="{{ url('/js/jquery.freebase-suggest.js') }}"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/freebase/suggest/4_1/suggest.min.js"></script>
 	<script type="text/javascript">
 		$(".suggestion_box").each(function(){
 			var element = $(this);
