@@ -459,14 +459,14 @@ h1.logo a{
     text-align: center;
 }
 
-.search{
+.user .search{
     display: none;
     width: 200px;
     margin: 20px auto;
     position: relative;
 }
 
-.search .btn-primary{
+.user .search .btn-primary{
     position: absolute;
     top: 6px;
     right: 6px;
