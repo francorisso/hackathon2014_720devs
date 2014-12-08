@@ -86,8 +86,23 @@
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var $ = $.noConflict();
+	</script>
 	<script src="{{ url('/js/jquery.freebase-suggest.js') }}"></script>
+	<script type="text/javascript">
+		$("#suggestion_box")
+		.suggest({ key: "{{ $google_api_key }}" })
+		.bind("fb-select", function(e, data){
+			if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
+				$('#f_mid').val( data.mid );	
+			}
+		});
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var $ = $.noConflict();
+	</script>
 	<script src="{{ url('/js/bootstrap.min.js') }}"></script>
 	<script src="{{ url('/js/docs.min.js') }}"></script>
 	<script src="{{ url('/js/jquery.fancybox.pack.js') }}"></script>

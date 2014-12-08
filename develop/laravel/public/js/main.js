@@ -79,13 +79,7 @@ var ListView = {
 
 var Topics = {
 	add: function(){
-		$("#suggestion_box")
-		.suggest({ key: "{{ $google_api_key }}" })
-		.bind("fb-select", function(e, data){
-			if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
-				$('#f_mid').val( data.mid );	
-			}
-		});
+		
 
 		$('.add-button').on('click',function(e){
 			e.preventDefault();
