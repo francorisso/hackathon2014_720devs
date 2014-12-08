@@ -5,7 +5,6 @@ class HomeController extends \BaseController {
 	protected $layout = 'layout.master';
 
 	private $view_params = array();
-	private $google_api_key = "AIzaSyBUsuVB1YULi0Zmmjr4L0hCrDSrpBKzT-U";
 	private $google_client;
 	private $user_id;
 

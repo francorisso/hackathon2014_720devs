@@ -4,9 +4,6 @@ class UserController extends \BaseController {
 
 	protected $layout = 'layout.master';
 
-	//Google API key
-	private $google_api_key = "AIzaSyBUsuVB1YULi0Zmmjr4L0hCrDSrpBKzT-U";
-
 	private $view_params = array();
 	
 	public function postLogin()

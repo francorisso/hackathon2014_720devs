@@ -4,7 +4,6 @@ class BoardController extends \BaseController {
 
 	protected $layout;
 
-	private $google_api_key = "AIzaSyBUsuVB1YULi0Zmmjr4L0hCrDSrpBKzT-U";
 	private $google_client;
 	private $view_params = array();
 	private $user_id;

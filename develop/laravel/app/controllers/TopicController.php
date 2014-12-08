@@ -5,8 +5,7 @@ class TopicController extends \BaseController {
 	protected $layout = 'layout.master';
 
 	private $user_id = null;
-	//Google API key
-	private $google_api_key = "AIzaSyBUsuVB1YULi0Zmmjr4L0hCrDSrpBKzT-U";
+	
 	private $google_client;
 	private $view_params = array();
 	
