@@ -110,6 +110,7 @@ var LoadComponents = {
 	},
 
 	profilePic: function(){
+		console.log('eh?');
 		FB.api(
 			"/me/picture",
 		    {
@@ -119,6 +120,7 @@ var LoadComponents = {
 		        "width": "200"
 		    },
 		    function (response) {
+		    	console.log(response);
 				if (response && !response.error) {
 					console.log(response);
 				}
