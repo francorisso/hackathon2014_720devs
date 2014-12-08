@@ -71,7 +71,7 @@
 		<span class="name">{{ Auth::user()->username }}</span>
 		<span>
 			<i class="glyphicon glyphicon-off" aria-hidden="true"></i>
-			<a href="#" onclick="javascript:logout();">Logout</a>
+			<a href="{{ url("users/logout") }}">Logout</a>
 		</span>
 	</div>
 
