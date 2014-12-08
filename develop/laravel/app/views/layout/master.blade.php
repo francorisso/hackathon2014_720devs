@@ -104,7 +104,7 @@
 	<script src="{{ url('/js/jquery.freebase-suggest.js') }}"></script>
 	<script type="text/javascript">
 		$(".suggestion_box").each(function(){
-			var element = $(this);
+			var element = $(this);console.log('aaa');
 			$(this).suggest({ key: "{{ $google_api_key }}" })
 			.bind("fb-select", function(e, data){
 				if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
