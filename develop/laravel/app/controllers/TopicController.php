@@ -110,7 +110,10 @@ class TopicController extends \BaseController {
 		//This will be the first videos to show, related directly to the topic
 		//but searching for terms related to education
 		$videos = $this->getFromYoutube( "learn|education|how to|tutorial|course", $mid );
-		
+		if(empty($videos)){
+			$videos = array();
+		}
+
 		//Now I'll search for videos related to the search term 
 		//related to education (/m/028xmlk) and hobbies (/m/05cglf6) topic.
 		$videos = array_merge( $videos, $this->getFromYoutube( $subject, "/m/028xmlk") );
