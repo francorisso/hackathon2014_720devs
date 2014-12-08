@@ -31,4 +31,11 @@ class UserController extends \BaseController {
 		Auth::logout();
 	}
 
+
+	public function getLogout()
+	{
+		Auth::logout();
+
+		return Redirect::to("/");
+	}
 }
