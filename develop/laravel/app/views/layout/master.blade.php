@@ -119,12 +119,7 @@
 		});
   	};
 
-  	//load board list
-  	LoadComponents.boards();
-  	LoadComponents.topics();
-  	LoadComponents.profilePic();
-
-	// Load the SDK asynchronously
+  	// Load the SDK asynchronously
 	(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
@@ -132,6 +127,15 @@
 		js.src = "//connect.facebook.net/en_US/sdk.js";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
+
+	FB.getLoginStatus(function(response) {
+		LoadComponents.profilePic();
+	});
+
+	//load board list
+  	LoadComponents.boards();
+  	LoadComponents.topics();
+
 	</script>
 </body>
 </html>
