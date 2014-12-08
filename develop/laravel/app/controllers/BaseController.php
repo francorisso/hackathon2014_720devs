@@ -2,7 +2,7 @@
 
 class BaseController extends Controller {
 
-	protected $google_api_key = "AIzaSyBUsuVB1YULi0Zmmjr4L0hCrDSrpBKzT-U";
+	protected $google_api_key = "AIzaSyAP7bMOYrtVgQueAcBtRsYVN1Ebxo3s3A8";
 	
 	/**
 	 * Setup the layout used by the controller.
