@@ -117,6 +117,8 @@
 			xfbml      : true,  // parse social plugins on this page
 			version    : 'v2.1' // use version 2.1
 		});
+
+		LoadComponents.profilePic();
   	};
 
   	// Load the SDK asynchronously
@@ -128,22 +130,7 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 
-	FB.getLoginStatus(function(response) {
-		FB.api(
-			"/me/picture",
-		    {
-		        "redirect": false,
-		        "height": "200",
-		        "type": "normal",
-		        "width": "200"
-		    },
-		    function (response) {
-				if (response && !response.error) {
-					console.log(response);
-				}
-		    }
-		);
-	});
+	
 
 	//load board list
   	LoadComponents.boards();
