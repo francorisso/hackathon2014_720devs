@@ -103,14 +103,17 @@
 	</script>
 	<script src="{{ url('/js/jquery.freebase-suggest.js') }}"></script>
 	<script type="text/javascript">
-		$(".suggestion_box")
-		.suggest({ key: "{{ $google_api_key }}" })
-		.bind("fb-select", function(e, data){
-			var element = $(e.target);console.log(element);
-			if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
-				element.find('.f_mid').val( data.mid );	
-			}
-		});
+		$(function(){
+			$(".suggestion_box").each(function(){
+				var element = $(this);
+				$(this).suggest({ key: "{{ $google_api_key }}" })
+				.bind("fb-select", function(e, data){
+					if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
+						element.find('.f_mid').val( data.mid );	
+					}
+				});
+			});
+		})
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript">
