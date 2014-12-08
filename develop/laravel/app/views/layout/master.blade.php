@@ -104,9 +104,10 @@
 	</script>
 	<script src="{{ url('/js/jquery.freebase-suggest.js') }}"></script>
 	<script type="text/javascript">
-		$("#suggestion_box")
+		$(".suggestion_box")
 		.suggest({ key: "{{ $google_api_key }}" })
 		.bind("fb-select", function(e, data){
+			console.log(e);
 			if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
 				$('#f_mid').val( data.mid );	
 			}
