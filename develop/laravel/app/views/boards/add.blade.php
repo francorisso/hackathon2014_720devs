@@ -48,7 +48,7 @@
 								</li>
 							@endforeach
 						</ul>
-						</p>
+						</p><br />
 
 						<h2>Add to a new board</h2>
 						<p>
@@ -79,6 +79,18 @@
 			parent.location.href = $(this).attr('href');
 		});
 	});
+
+	function add_to_board( boardId, videoId ){
+		var reloadBoards = function(){
+			var $ = parent.$;
+			parent.LoadComponents.boards(function(){
+				$.fancybox.close();
+			});
+		};
+		$.post(domain+'/addVideo',{"boardId": boardId, "videoId": videoId},function(){
+			reloadBoards();
+		});
+	}
 </script>
 
 </body>
