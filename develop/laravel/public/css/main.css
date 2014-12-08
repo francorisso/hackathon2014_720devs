@@ -668,8 +668,7 @@ h1.logo a{
     padding: 15px;
     width: 100%;
     float: left;
-    overflow-x: hidden;
-    overflow-y: auto;  
+    overflow: auto;  
 }
 
 /*-------------------------------------------------------------------------------------------*/
