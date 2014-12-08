@@ -14,7 +14,7 @@
 				{{ Form::hidden('mid','',array('class'=>'f_mid')) }}
 
 				{{ Form::text('subject','',array(
-											,"class"=>"form-control input-lg suggestion_box"
+											"class"=>"form-control input-lg suggestion_box"
 											,"placeholder"=>"Ex. Garden, Photography, etc.")
 								) }}<br />
 				{{ Form::submit("Search",array("class"=>"btn btn-primary")) }}
