@@ -65,10 +65,10 @@
 
 <div class="user">
 	<div class="profile">
-		<img src="images/profile.jpg" alt="" class="img-circle">
-		<span class="name">Mariana Stariolo</span>
+		<img src="" alt="Profile Image" class="img-circle">
+		<span class="name">{{ Auth::user()->username }}</span>
 		<span>
-			<i class="glyphicon glyphicons-exit" aria-hidden="true"></i>
+			<i class="glyphicon glyphicon-off" aria-hidden="true"></i>
 			<a href="#" onclick="javascript:logout();">Logout</a>
 		</span>
 	</div>
