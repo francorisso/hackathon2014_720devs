@@ -3,7 +3,7 @@
 @section("content")
 
 <div class="container-fluid min-height100 clearfix">
-	<div class="board-list add-wrapper clearfix">
+	<div class="board-list add-wrapper clearfix" id="home-component">
 		<a href="#" class="add-button">
 			<i class="icon-more"></i>
 			Add<br>Hobbies & Careers

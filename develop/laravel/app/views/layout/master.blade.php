@@ -81,6 +81,19 @@
 		<i class="icon-more"></i>
 		Add
 	</a>
+	<div class="search">
+		{{ Form::open(array('url' => 'topics/add', 'method'=>'post')) }}
+			{{ Form::hidden('mid','',array('id'=>'f_mid')) }}
+
+			{{ Form::text('subject','',array(
+										'id'=>'suggestion_box'
+										,"class"=>"form-control input-lg"
+										,"placeholder"=>"Ex. Garden, Photography, etc.")
+							) }}<br />
+			{{ Form::submit("Search",array("class"=>"btn btn-primary")) }}
+		{{ Form::close() }}
+	</div>
+
 </div><!-- /.user -->
 
 	<!-- Bootstrap core JavaScript

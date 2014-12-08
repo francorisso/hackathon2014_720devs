@@ -94,10 +94,16 @@ var Layout = {
 
 var Topics = {
 	add: function(){
-		$('.add-button').on('click',function(e){
+		$('#home-component .add-button').on('click',function(e){
 			e.preventDefault();
 			$(this).hide(1);
-			$('.search').show(1);
+			$('#home-component .search').show(1);
+		});
+
+		$('.user .add-button').on('click',function(e){
+			e.preventDefault();
+			$(this).hide(1);
+			$('.user .search').show(1);
 		});
 	},
 
