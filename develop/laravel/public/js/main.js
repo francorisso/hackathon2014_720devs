@@ -123,7 +123,7 @@ var LoadComponents = {
 		    function (response) {
 		    	console.log(response);
 				if (response && !response.error) {
-					console.log(response);
+					$('.profile .img-circle').attr('src',response.data.url);
 				}
 		    }
 		);
