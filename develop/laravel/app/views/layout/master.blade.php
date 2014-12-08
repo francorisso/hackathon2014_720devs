@@ -12,7 +12,7 @@
 	<title>Hobbies and Careers</title>
 
 	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/freebase/suggest/4_1/suggest.min.css" />
-	
+
 	<!-- Bootstrap core CSS -->
 	<link href="{{ url('/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -86,7 +86,7 @@
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/freebase/suggest/4_1/suggest.min.js"></script>
+	<script src="{{ url('/js/jquery.freebase-suggest.js') }}"></script>
 	<script src="{{ url('/js/bootstrap.min.js') }}"></script>
 	<script src="{{ url('/js/docs.min.js') }}"></script>
 	<script src="{{ url('/js/jquery.fancybox.pack.js') }}"></script>
