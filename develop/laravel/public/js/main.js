@@ -86,8 +86,9 @@ var Layout = {
 	},
 
 	_setSidebarSize: function(){
-		var margins = $('.user').outerHeight(true)-$('.user').height();
-		$('.user').height( $(window).height() +  margins);
+		var margins = $('.user').outerHeight(true) - $('.user').height();
+		console.log(margins);
+		$('.user').height( $(window).height() +  margins );
 	}	
 };
 
