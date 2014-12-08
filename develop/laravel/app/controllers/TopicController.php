@@ -95,6 +95,19 @@ class TopicController extends \BaseController {
 
 		$this->showListing($mid, $topic["name"]);
 	}
+
+	/***
+	* In this step we refine the search with some help from the user
+	*/
+	public function postDelete( $topic_id ){
+		
+		$topic = Topic::where(array('id'=>$topic_id, "user_id"=> ($this->user_id) ))->get();
+		if(empty($topic) || empty($topic->id)){
+			Topic::destroy($topic_id);
+		}
+
+		return;
+	}
 	
 	/**
 	HELPERS

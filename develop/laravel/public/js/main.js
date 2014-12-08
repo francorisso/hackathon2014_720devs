@@ -107,6 +107,15 @@ var Topics = {
 		});
 	},
 
+	remove: function(id){
+		var c = window.confirm("Are you sure you want delete this interest?");
+		if(c){
+			$.post(domain+'/topics/delete/'+id,{},function(res){
+				LoadComponents.topics();
+			});
+		}
+	}
+
 };
 
 var LoadComponents = {
@@ -130,7 +139,7 @@ var LoadComponents = {
 			for(var i=0; i<res.length; i++){
 				html += '<span class="tag">\
 					<a href="'+ res[i].permalink +'">'+ res[i].name +'</a>\
-					<a class="glyphicon glyphicon-remove" href="#"></a>\
+					<a class="glyphicon glyphicon-remove" href="javascript://" onclick="javascript:Topics.remove('+ res[i].id +');"></a>\
 				</span>';
 			}
 			$('#component-topics').html( html );
