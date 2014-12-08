@@ -122,6 +122,7 @@
   	//load board list
   	LoadComponents.boards();
   	LoadComponents.topics();
+  	LoadComponents.profilePic();
 
 	// Load the SDK asynchronously
 	(function(d, s, id) {
