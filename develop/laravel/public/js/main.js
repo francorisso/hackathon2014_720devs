@@ -108,21 +108,4 @@ var LoadComponents = {
 			callback();
 		}
 	},
-
-	profilePic: function(){
-		FB.api(
-			"/me/picture",
-		    {
-		        "redirect": false,
-		        "height": "200",
-		        "type": "normal",
-		        "width": "200"
-		    },
-		    function (response) {
-				if (response && !response.error) {
-					console.log(response);
-				}
-		    }
-		);
-	},
 }
