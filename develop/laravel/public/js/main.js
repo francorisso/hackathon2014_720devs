@@ -77,10 +77,14 @@ var ListView = {
 	}
 };
 
+var Layout = {
+	setSidebarSize: function(){
+		$('.user').height( $(window).height() );
+	}
+};
+
 var Topics = {
 	add: function(){
-		
-
 		$('.add-button').on('click',function(e){
 			e.preventDefault();
 			$(this).hide(1);

@@ -151,10 +151,12 @@
 
 	
 
-	//load board list
-  	LoadComponents.boards();
-  	LoadComponents.topics();
-
+	//load components
+  	$(function(){
+  		Layout.setSidebarSize();
+  		LoadComponents.boards();
+  		LoadComponents.topics();
+  	});
 	</script>
 </body>
 </html>
