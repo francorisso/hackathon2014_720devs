@@ -48,12 +48,11 @@
 		<div class="caption">
     		<div class="text">
     			<h2>
-    				Welcome lorem ipsum sit amet!
-    				<strong>It's Nice To Meet You</strong>
+    				Start learning for free!
+					<strong>Your hobby may become your career</strong>
     			</h2>
     			<div class="buttons">
     				<a href="#" onclick="javascript:fb_login();" rel="no-follow" class="btn-xl fb">Facebook SIGN UP</a>
-					<a class="fancybox-media btn-xl" href="//www.youtube.com/embed/opj24KnzrWo">Video Tour</a>
     			</div>
     		</div>
     	</div>
@@ -72,13 +71,12 @@
 					<span class="icon-bar"></span>
 				</button>
 				<h1 class="logo navbar-brand">
-					<a href="#">Hobbies and Careers</a>
+					<a href="{{ url("/") }}">Hobbies and Careers</a>
 				</h1>
 			</div>
 
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#video-tour">Video Tour</a></li>
 					<li><a href="#features">Features</a></li>
 					<li><a href="#sign-up">Sign Up</a></li>
 				</ul>
@@ -92,41 +90,38 @@
 		<div class="row">
 			<div class="page-header">
 				<h2>Features</h2>
-				<h3>Lorem ipsum dolor sit amet consectetur.</h3>
+				<h3>Get the best from Youtube.</h3>
 			</div>
 
 			<div class="col-lg-4">
-				<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				<h2>Fun Learning</h2>
+				<p>Learn based on youtube videos.</p>
 			</div><!-- /.col-lg-4 -->
 
 			<div class="col-lg-4">
-				<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				<h2>Personal Recomendations</h2>
+				<p>You get better recommendations as you learn what you want.</p>
 			</div><!-- /.col-lg-4 -->
 
 			<div class="col-lg-4">
-				<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				<h2>Get extra information</h2>
+				<p>Get books, films, careers and more about your interest.</p>
 			</div><!-- /.col-lg-4 -->
 		</div><!-- /.row -->
 	</div><!-- /.container -->
 </div><!-- /.container-fluid -->
 
-<div class="container features">
+<!--<div class="container features">
 	<div class="row featurette">
 		<div class="col-md-7">
-			<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			<h2 class="featurette-heading">Learn watching videos. <span class="text-muted">It'll blow your mind.</span></h2>
+			<p class="lead">.</p>
 		</div>
 
 		<div class="col-md-5">
 			<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
 		</div>
-	</div><!-- /.row -->
+	</div>
 
 	<hr class="featurette-divider">
 
@@ -138,7 +133,7 @@
 			<h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
 			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 		</div>
-	</div><!-- /.row -->
+	</div>
 
 	<hr class="featurette-divider">
 
@@ -150,17 +145,16 @@
 		<div class="col-md-5">
 			<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
 		</div>
-	</div><!-- /.row -->
+	</div>
 </div><!-- /.container -->
 
 <div class="container-fluid" id="sign-up">
 	<h2>
-		Welcome lorem ipsum sit amet!
-		<strong>It's Nice To Meet You</strong>
+		Start learning for free!
+		<strong>Your hobby may become your career</strong>
 	</h2>
 	<div class="buttons">
 		<a href="#" onclick="javascript:fb_login();" rel="no-follow" class="btn-xl fb">Facebook SIGN UP</a>
-		<a class="fancybox-media btn-xl" href="//www.youtube.com/embed/opj24KnzrWo">Video Tour</a>
 	</div>
 </div><!-- /.container -->
 
