@@ -46,7 +46,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<h1 class="logo navbar-brand">
-					<a href="#">Hobbies and Careers</a>
+					<a href="{{{ url("/") }}}">Hobbies and Careers</a>
 				</h1>
 			</div>
 
@@ -117,8 +117,6 @@
 			xfbml      : true,  // parse social plugins on this page
 			version    : 'v2.1' // use version 2.1
 		});
-		console.log('ah?');
-		LoadComponents.profilePic();
   	};
 
   	// Load the SDK asynchronously

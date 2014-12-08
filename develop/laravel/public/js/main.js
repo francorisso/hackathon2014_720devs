@@ -110,11 +110,12 @@ var LoadComponents = {
 	},
 
 	profilePic: function(){
-		console.log('eh?  sdsd');
+		var access_token =   FB.getAuthResponse()['accessToken'];
+
 		FB.api(
 			"/me/picture",
 		    {
-		        "redirect": true,
+		        "redirect": false,
 		        "height": "200",
 		        "type": "normal",
 		        "width": "200"
