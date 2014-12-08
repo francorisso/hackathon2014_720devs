@@ -98,7 +98,11 @@
 		ListView.init();
 
 		function add_topic(topic_id, subject){
-			$.post(domain+"/topics/add",{ mid: topic_id, subject: subject });
+			$.post(domain+"/topics/add",{ mid: topic_id, subject: subject },function(){
+				LoadComponents.topics(function(){
+					
+				});
+			});
 		}
 	</script>
 @stop
