@@ -6,7 +6,7 @@
 	<div class="board-list clearfix">
 		@if(!empty($is_preview) && $is_preview===true)
 			<div class="add_this_tag">
-				Topic: {{ $subject }} <a href="">Add to my topics</a>
+				<h2>Topic: {{ $subject }} <a href="">Add to my topics</a></h2>
 			</div>
 		@endif
 		<div class="list" id="grid">
