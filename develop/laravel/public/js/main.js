@@ -121,7 +121,6 @@ var LoadComponents = {
 		        "width": "200"
 		    },
 		    function (response) {
-		    	console.log(response);
 				if (response && !response.error) {
 					$('.profile .img-circle').attr('src',response.data.url);
 				}
