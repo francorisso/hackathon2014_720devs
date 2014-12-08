@@ -464,6 +464,7 @@ h1.logo a{
     width: 200px;
     margin: 20px auto;
     position: relative;
+    float:left;
 }
 
 .user .search .btn-primary{

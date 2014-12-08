@@ -108,7 +108,6 @@
 			$(this).suggest({ key: "{{ $google_api_key }}" })
 			.bind("fb-select", function(e, data){
 				if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
-					console.log(element);
 					element.parent().find('.f_mid').val( data.mid );	
 
 				}

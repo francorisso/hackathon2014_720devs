@@ -106,7 +106,7 @@ class TopicController extends \BaseController {
 			Topic::destroy($topic_id);
 		}
 
-		return;
+		return Response::json(array("res"=>1));
 	}
 	
 	/**
