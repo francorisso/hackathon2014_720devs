@@ -106,7 +106,7 @@
 		$(".suggestion_box")
 		.suggest({ key: "{{ $google_api_key }}" })
 		.bind("fb-select", function(e, data){
-			var element = $(e.target);
+			var element = $(e.target);console.log(element);
 			if( typeof data != 'undefined' && typeof data.mid != 'undefined' ){
 				element.find('.f_mid').val( data.mid );	
 			}
