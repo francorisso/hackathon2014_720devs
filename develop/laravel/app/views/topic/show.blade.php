@@ -4,36 +4,44 @@
 
 <div class="container-fluid clearfix">
 	<div class="board-list clearfix">
+		@if($is_preview===true)
+			<div class="add_this_tag">
+				Topic: {{ $subject }} <a href="">Add to my topics</a>
+			</div>
+		@endif
 		<div class="list" id="grid">
-			
+
+			@if(!empty($books))
 			<div class="col-sm-6 col-lg-4 item">
 				<div class="box special-box">
 					<div class="panel-heading">Books</div>
 					<div class="panel-body">
 						<p>Here a list of books you may find interesting</p>
 						<ul class="list-group">
-							@if(!empty($books))
-								@foreach ($books as $book)
-									<li class="list-group-item">
-										<a href="#" target="_blank">
-											<h4 class="list-group-item-heading">{{ $book["name"] }}</h4>
-											<p class="list-group-item-text">description</p>
-										</a>
-									</li>
-								@endforeach
-							@endif
+							
+							@foreach ($books as $book)
+								<li class="list-group-item">
+									<a href="#" target="_blank">
+										<h4 class="list-group-item-heading">{{ $book["name"] }}</h4>
+										<p class="list-group-item-text">description</p>
+									</a>
+								</li>
+							@endforeach
+							
 						</ul>
 					</div>
 				</div><!-- /.special-box Learn -->
 			</div>
+			@endif
 
+			@if(!empty($films))
 			<div class="col-sm-6 col-lg-4 item">
 				<div class="box special-box2">
 					<div class="panel-heading">Movies</div>
 					<div class="panel-body">
 						<p>List of movies related with {{ $subject }}</p>
 						<ul class="list-group">
-						@if(!empty($films))
+						
 							@foreach ($films as $film)
 								<li class="list-group-item">
 									<a href="#" target="_blank">
@@ -43,11 +51,12 @@
 									</a>
 								</li>
 							@endforeach
-						@endif
+						
 						</ul>
 					</div>
 				</div><!-- /.special-box Jobs -->
 			</div>
+			@endif
 
 			@if(!empty($videos))
 				@foreach ($videos as $video)

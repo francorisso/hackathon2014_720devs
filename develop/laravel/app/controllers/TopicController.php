@@ -93,6 +93,8 @@ class TopicController extends \BaseController {
 
 		$topic = $result["result"][0];
 
+		$this->view_params["is_preview"] = true;
+
 		$this->showListing($mid, $topic["name"]);
 	}
 
